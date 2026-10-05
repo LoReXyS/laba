@@ -1,0 +1,19 @@
+.btn {
+  /* Frame 1 */
+  width: 89px;
+  height: 35px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: rgba(255, 179, 108, 1);
+  border: none;
+}
+.userBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

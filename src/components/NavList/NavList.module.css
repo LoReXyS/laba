@@ -1,0 +1,48 @@
+.ulMap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.ulMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* links */
+.ulMap a,
+.ulMobile a {
+  text-decoration: none;
+  color: black;
+
+  position: relative;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* hover move */
+.ulMobile a:hover,
+.ulMap a:hover {
+  color: #ff8c3c;
+  transform: translateX(6px);
+}
+
+/* underline animation */
+.ulMap a::after,
+.ulMobile a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ffb36c;
+  transition: width 0.3s ease;
+}
+
+.ulMap a:hover::after,
+.ulMobile a:hover::after {
+  width: 100%;
+}

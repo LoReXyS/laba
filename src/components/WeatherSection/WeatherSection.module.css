@@ -1,0 +1,20 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.weatherSection {
+  padding-top: 60px;
+}
+.weatherList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 80px;
+}
+@media screen and (max-width: 800px) {
+  .weatherList {
+    justify-content: center;
+  }
+}

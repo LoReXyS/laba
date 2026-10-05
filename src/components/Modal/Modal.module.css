@@ -1,0 +1,208 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 20, 20, 0.9); /* Темний фон навколо модалки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 40px; /* Дуже закруглені кути як на фото */
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.label {
+  width: 100%;
+  text-align: left;
+}
+
+.labelText {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 25px;
+  background-color: #e6e6e6; /* Сірий фон інпутів */
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #a0a0a0;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  background-color: #ffb370; /* Твій помаранчевий колір */
+  color: #000;
+  border: none;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: #ffa04d;
+  transform: translateY(-2px);
+}
+
+.footerText {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000;
+}
+
+.link {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 600;
+}
+@media screen and (max-width: 1000px) {
+  .modal {
+    /* Frame 11 */
+    width: 400px;
+    height: 500px;
+  }
+}
+/* ===== BACKDROP FADE IN ===== */
+.backdrop {
+  animation: backdropFade 0.35s ease forwards;
+}
+
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== MODAL POP IN (scale + slide) ===== */
+.modal {
+  animation: modalShow 0.4s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+  transform-origin: center;
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== TITLE плавна поява ===== */
+.title {
+  animation: fadeUp 0.5s ease 0.15s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== INPUT INTERACTIONS ===== */
+.input {
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 179, 108, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ===== LABEL легкий рух при фокусі ===== */
+.label:focus-within .labelText {
+  transform: translateX(6px);
+  transition: transform 0.25s ease;
+}
+
+/* ===== BUTTON ефект натискання ===== */
+.submitBtn {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submitBtn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== FOOTER LINK hover ===== */
+.link {
+  position: relative;
+  text-decoration: none;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}

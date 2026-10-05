@@ -1,0 +1,224 @@
+.weatherInfo {
+  /* Rectangle 5 */
+  width: 420px;
+  height: 480px;
+  border-radius: 20px;
+  background: rgba(232, 232, 232, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.nameName {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: 'Montserrat';
+  font-style: Medium;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: right;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 350px;
+}
+.dataItemSecond {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.dataTxt {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: 'Montserrat';
+  font-style: Medium;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.dataTxt1 {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: 'Montserrat';
+  font-style: Medium;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-align: right;
+}
+.hourlyBtn {
+  /* Rectangle 6 */
+  color: rgba(0, 0, 0, 1);
+
+  font-family: 'Montserrat';
+  font-style: Medium;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: right;
+
+  border-radius: 10px;
+  background: rgba(255, 179, 108, 1);
+  border: none;
+  padding: 15px 38px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.btnImgs {
+  border: none;
+  background: none;
+}
+@media (max-width: 1000px) {
+  .weatherInfo:nth-child(n + 3) {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .weatherInfo:nth-child(n + 2) {
+    display: none;
+  }
+}
+.weatherInfo {
+  width: 420px;
+  height: 480px;
+  border-radius: 20px;
+  background: rgba(232, 232, 232, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  /* базова анімація */
+  transition:
+    transform 0.35s cubic-bezier(0.21, 1.02, 0.73, 1),
+    box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+/* ===== CREATIVE HOVER ===== */
+.weatherInfo:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== LIGHT SWEEP EFFECT ===== */
+.weatherInfo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+}
+
+.weatherInfo:hover::before {
+  animation: shine 1s ease forwards;
+}
+
+@keyframes shine {
+  from {
+    left: -75%;
+  }
+  to {
+    left: 130%;
+  }
+}
+
+/* ===== ICON FLOAT ===== */
+.imgIcon {
+  transition: transform 0.4s ease;
+}
+
+.weatherInfo:hover .imgIcon {
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* ===== TEMPERATURE POP ===== */
+.temperature h2 {
+  transition: transform 0.3s ease;
+}
+
+.weatherInfo:hover .temperature h2 {
+  transform: scale(1.08);
+}
+
+/* ===== BUTTONS HOVER ===== */
+.btnImgs {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.btnImgs:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* ===== HOURLY BUTTON ===== */
+.hourlyBtn {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hourlyBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 160, 80, 1);
+}
+
+/* ===== TEXT FADE IN FEEL ===== */
+.nameName,
+.dataTxt,
+.dataTxt1 {
+  transition: transform 0.3s ease;
+}
+
+.weatherInfo:hover .nameName {
+  transform: translateX(4px);
+}
+
+.weatherInfo:hover .dataTxt {
+  transform: translateY(-2px);
+}

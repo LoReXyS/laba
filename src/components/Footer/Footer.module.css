@@ -1,0 +1,137 @@
+/* Footer.module.css */
+.footer {
+  background: rgba(255, 179, 108, 1);
+  padding: 40px; /* вертикальні відступи */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between; /* розтягує елементи: лого ліворуч, адреса по центру, контакти праворуч */
+  align-items: center; /* вертикальне центрування */
+  flex-wrap: wrap; /* для адаптивності */
+  gap: 30px;
+}
+
+/* Логотип */
+.imgss {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Список адреси */
+.addressList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.addressTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.addressNav {
+  display: flex;
+  flex-direction: column; /* робимо вертикальний стовпчик */
+  gap: 4px;
+}
+
+.addressLink {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  position: relative;
+  display: inline-block;
+
+  transition: color 0.25s ease;
+}
+
+/* лінія під текстом */
+.addressLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 0%;
+  height: 2px;
+
+  background: rgba(255, 179, 108, 1);
+  transition: width 0.3s ease;
+}
+
+/* hover ефект */
+.addressLink:hover {
+  color: rgb(214, 135, 79);
+}
+
+.addressLink:hover::after {
+  width: 100%;
+}
+
+/* Список контактів */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.contactTxt {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.contactNav {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.contactLink img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s;
+}
+
+.contactLink img:hover {
+  transform: scale(1.1);
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .addressList,
+  .contactList {
+    text-align: center;
+  }
+
+  .addressNav {
+    align-items: center;
+  }
+
+  .contactNav {
+    justify-content: center;
+  }
+
+  .contactTxt,
+  .addressTitle {
+    text-align: center;
+  }
+}

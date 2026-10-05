@@ -1,0 +1,70 @@
+.chartjs-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f7f3;
+  font-family: system-ui, 'Segoe UI', sans-serif;
+}
+
+.chartjs-section h2 {
+  font-size: 2.2rem;
+  color: #2c5a2e;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.petSwiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.petSwiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.petSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.petSwiper .swiper-slide:hover img {
+  transform: scale(1.03);
+}
+
+/* Стилі пагінації (крапки) */
+.swiper-pagination-bullet {
+  background: #6c8b6e;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: #2c5a2e;
+  transform: scale(1.2);
+}
+
+/* Індикатор завантаження */
+.loader {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 60px;
+  color: #2c5a2e;
+}
+
+.error {
+  color: #b33;
+  text-align: center;
+  padding: 60px;
+}
+@media screen and (max-width: 1000px) {
+  .chartjs-section {
+    display: none;
+  }
+}

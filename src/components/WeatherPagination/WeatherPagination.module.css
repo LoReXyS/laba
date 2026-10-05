@@ -1,0 +1,181 @@
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== PAGE ANIMATION ===== */
+.continer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  animation: fadeUp 0.5s ease both;
+}
+
+/* ===== MAIN CARD ===== */
+.contnent {
+  border-radius: 20px;
+  background: rgba(232, 232, 232, 1);
+  padding-bottom: 20px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contnent:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== HEADER ANIMATION ===== */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  animation: fadeUp 0.6s ease both;
+}
+
+.header h1 {
+  transition: transform 0.3s ease;
+}
+
+.contnent:hover .header h1 {
+  transform: scale(1.05);
+}
+
+/* ===== BACK BUTTON ===== */
+.backBtn {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.backBtn:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.backBtn:active {
+  transform: scale(0.95);
+}
+
+/* ===== GRID ITEMS ===== */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 60px;
+}
+
+/* ===== WEATHER CARDS ===== */
+.item {
+  width: 250px;
+  height: 217px;
+
+  border-radius: 10px;
+  background: rgba(217, 217, 217, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* hover lift */
+.item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(235, 235, 235, 1);
+}
+
+/* shine effect */
+.item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.item:hover::before {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  to {
+    left: 130%;
+  }
+}
+
+/* ===== TEXT ANIMATIONS ===== */
+.item .txt,
+.item .degrees {
+  transition: transform 0.25s ease;
+}
+
+.item:hover .txt {
+  transform: translateY(-3px);
+}
+
+.item:hover .degrees {
+  transform: scale(1.1);
+}
+
+/* ===== ICONS ===== */
+.item img {
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* ===== CHART + FORECAST SECTIONS ===== */
+.chartSection,
+.forecastSection {
+  padding: 20px;
+
+  animation: fadeUp 0.6s ease both;
+}
+
+/* stagger effect */
+.chartSection {
+  animation-delay: 0.1s;
+}
+
+.forecastSection {
+  animation-delay: 0.2s;
+}

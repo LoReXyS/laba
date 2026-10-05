@@ -1,0 +1,11 @@
+.ulAccount {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ulMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
